@@ -18,7 +18,7 @@ const HeaderLt = () => {
                 </GridItem>
                 <GridItem colStart={4} colEnd={4} bg='red' borderRadius="10px">
                     <Button colorScheme='teal' variant='ghost' width="200px" height="50px" color="black">
-                                Gráficos
+                                Todos os Gráficos
                     </Button> 
                 </GridItem>
             </Grid>
