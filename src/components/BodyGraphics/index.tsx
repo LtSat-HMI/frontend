@@ -1,6 +1,8 @@
-import { Container, Box } from '@chakra-ui/react'
+import { Container, Box, Grid, GridItem } from '@chakra-ui/react'
 import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
-import { useEffect, useState } from 'react';
+import React from 'react';
+import Temperatura from './components/Temperatura';
+import Altitude from './components/Altitude';
 
 const dataTemp = [
     {Temperatura: '1', time: 1},
@@ -12,32 +14,18 @@ const dataTemp = [
     {Temperatura: '4', time: 6},
   ];
 
-
 const BodyGraphics = () => {
   
     return (
         <>
-            <Container width="100%" bg="blue">
-                <Box style={{ marginTop: '150px', backgroundColor: '#ffffff' }}>
-                    <LineChart
-                        width={300}
-                        height={150}
-                        data={dataTemp}
-                        margin={{top: 5, right: 30, left: 20, bottom: 5}}
-                    >
-                        <Line
-                            type='monotone'
-                            dataKey='time'
-                            stroke='#000000'
-                            activeDot={{r: 8}}
-                        />
-                        {/* <Tooltip/> */}
-                        <YAxis />
-                        {/* <XAxis dataKey='Temperatura'/>
-                        <Legend /> */}
-                    </LineChart>
-                </Box>
-            </Container>
+            <Grid gap={1} style={{ display: 'flex' }}>
+                <GridItem w='100%' h='10' bg='blue'>
+                    <Temperatura data={dataTemp} />
+                </GridItem>
+                <GridItem w='100%' h='10' bg='blue'>
+                    <Altitude data={dataTemp} />
+                </GridItem>
+            </Grid>
         </>
     );
 };
